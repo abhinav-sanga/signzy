@@ -4,17 +4,11 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
-
-mongoose.Promise = global.Promise;
-mongoose.connect('mongodb+srv://abhi0515:abhinav05@votecluster-ew4za.mongodb.net/ubuntu18?retryWrites=true')
-.then(() => console.log('MongoDB Connected'))
-.catch(err => console.log(err));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
